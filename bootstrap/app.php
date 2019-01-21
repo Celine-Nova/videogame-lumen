@@ -22,10 +22,11 @@ try {
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
+// ici je decommente la ligne pour activer les facades = classe plus user friendly a appeller
+$app->withFacades();
 
-// $app->withFacades();
-
-// $app->withEloquent();
+// je decommente aussi cette ligne pour une utilisation future d'Eloquent => gestion de la BDD
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
