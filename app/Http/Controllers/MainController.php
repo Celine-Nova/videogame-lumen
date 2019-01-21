@@ -23,5 +23,13 @@ class MainController extends Controller
             ]
         );
     }
+    public function admin() {
+        return view(
+            'admin',
+            [
+                'test' => 'coucou',
+            ]
+        );
+    }
 
 }
