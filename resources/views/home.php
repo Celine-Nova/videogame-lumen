@@ -1,4 +1,5 @@
-
+<?php include __DIR__ . '/layout/header.php'; ?>
+<?php include __DIR__ . '/layout/footer.php'; ?>
         <nav>
             Allez ajouter un jeu à l'aide du <a href="<?= route("nom_de_route_admin") ?>"> formulaire </a>
         </nav>

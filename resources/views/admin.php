@@ -1,3 +1,6 @@
+
+<?php include __DIR__ . '/layout/header.php'; ?>
+<?php include __DIR__ . '/layout/footer.php'; ?>
 <div class="col-12 col-md-4">
 					<div class="card">
 							<div class="card-header">Ajout</div>
