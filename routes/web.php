@@ -28,9 +28,9 @@
 //  });
  $router->get('/', [
     'uses' => 'MainController@home',
-    'as' => 'nom_de_route_home'
+    'as' => 'route_home'
 ]);
 $router->get('/admin', [
    'uses' => 'MainController@admin',
-   'as' => 'nom_de_route_admin'
+   'as' => 'route_admin'
 ]);
