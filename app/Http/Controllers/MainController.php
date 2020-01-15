@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -16,10 +17,14 @@ class MainController extends Controller
         //
     }
     public function home() {
+        $videogames = DB::table('videogame')->get();
+        // dump($videogames);
+        
         return view(
             'home',
             [
-                'test' => 'coucou',
+                // 'test' => 'coucou',
+                'videogames' => $videogames,
             ]
         );
     }

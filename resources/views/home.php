@@ -21,7 +21,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">id</th>
                     <th scope="col">Nom</th>
                     <th scope="col">&Eacute;diteur</th>
                     <th scope="col">Date de sortie</th>
@@ -30,15 +30,20 @@
             </thead>
             <tbody>
                 <!--Je boucle sur le tableau $videogameList contenant tous les jeux vidéos -->
-                
+                <?php foreach ($videogames as $game)
+                {
+                    
+                    ?>
                 <tr>
-                    <td>'.$game['id'].'</td>
-                    <td>'.$game['name'].'</td>
-                    <td>'.$game['editor'].'</td>
-                    <td>'.$game['release_date'].'</td>
-                    <td>'.$game['platform_id'].'</td>
+                    <td><?= $game->id;?></td>
+                    <td><?= $game->name;?></td>
+                    <td><?= $game->editor;?></td>
+                    <td><?= $game->release_date;?></td>
+                    <td><?= $game->platform_id;?></td>
                 </tr>
-                
+                <?php
+                }
+                ?>
         
             </tbody>
         </table>
