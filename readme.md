@@ -1,7 +1,7 @@
 # VIDEOGAME
 ## Projet avec Lumen
 O'clock m'a fourni le code HTML BOOTSTRAP me permettant de gérer mes jeux vidéo. Merci  :wink:
-
+Je dois faire la partie dynamique
 Tâches 
 - Installer Lumen
 - Configurer
