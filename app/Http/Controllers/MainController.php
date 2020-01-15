@@ -17,14 +17,14 @@ class MainController extends Controller
         //
     }
     public function home() {
-        $videogames = DB::table('videogame')->get();
+        $videogameList = DB::table('videogame')->get();
         // dump($videogames);
         
         return view(
             'home',
             [
                 // 'test' => 'coucou',
-                'videogames' => $videogames,
+                'videogames' => $videogameList,
             ]
         );
     }

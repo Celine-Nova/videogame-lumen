@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 <!--Je boucle sur le tableau $videogameList contenant tous les jeux vidéos -->
-                <?php foreach ($videogames as $game)
+                <?php foreach ($videogameList as $game)
                 {
                     
                     ?>
