@@ -24,7 +24,7 @@ class MainController extends Controller
             'home',
             [
                 // 'test' => 'coucou',
-                'videogames' => $videogameList,
+                'videogameList' => $videogameList,
             ]
         );
     }
