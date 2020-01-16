@@ -34,3 +34,7 @@ $router->get('/admin', [
    'uses' => 'MainController@admin',
    'as' => 'route_admin'
 ]);
+$router->post('/admin', [
+   'uses' => 'MainController@admin',
+   'as' => 'route_request'
+]);

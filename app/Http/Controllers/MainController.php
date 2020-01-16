@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Videogame;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +19,7 @@ class MainController extends Controller
     }
     public function home() {
         $videogameList = DB::table('videogame')->get();
+        
         // dump($videogames);
         
         return view(
@@ -28,7 +30,12 @@ class MainController extends Controller
             ]
         );
     }
-    public function admin() {
+    public function admin(Request $Request) {
+        $request = $request->all();
+       
+        dump($request);
+  
+        
         return view(
             'admin',
             [

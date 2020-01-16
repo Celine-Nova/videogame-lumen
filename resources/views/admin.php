@@ -6,7 +6,7 @@
 	<div class="card">
 		<div class="card-header">Ajout</div>
 		<div class="card-body">
-			<form action="index.php" method="post">
+			<form action="<?= route('route_request') ?>" method="post">
 				<div class="form-group">
 					<label for="name">Nom</label>
 					<input type="text" class="form-control" name="name" id="name" placeholder="">
@@ -22,7 +22,7 @@
 				<div class="form-group">
 					<label for="platform">Console / Support</label>
 					<select class="custom-select" id="platform" name="platform">
-						<option>-</option>
+						<option></option>
 						
 						<option value=""></option>
 						
