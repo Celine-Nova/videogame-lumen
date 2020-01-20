@@ -1,5 +1,5 @@
-<!-- j'inclus le template header -->
-<!-- ici le . est égal au slash / (layout/footer) -->
+<!-- j'inclus le template header--> 
+
 <?= view('layout.header') ?>
 
 <div class="col-12 col-md-4">
@@ -22,7 +22,7 @@
 				<div class="form-group">
 					<label for="platform">Console / Support</label>
 					<select class="custom-select" id="platform" name="platform">
-						<option></option>
+						<option>3</option>
 						
 						<option value=""></option>
 						
@@ -38,5 +38,3 @@
 </main>
 <!-- j'inclus le template footer -->
 <?php echo view('layout.footer');?>
-<!-- #Raccourci de php echo 
-en remplaçant le php echo par un egal (?=)-->

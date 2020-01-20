@@ -1,9 +1,9 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Videogame extends Model
+class Platform extends Model
 {
     /**
      * The table associated with the model.

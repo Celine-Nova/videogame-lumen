@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Auth\Authenticatable;
 use Laravel\Lumen\Auth\Authorizable;
@@ -15,6 +15,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     /**
      * The attributes that are mass assignable.
      *
+     * Par convention, le nom pluriel de la classe sera utilisé comme nom de table sauf si un autre nom est explicitement spécifié.
+     *  Ainsi, dans ce cas, Eloquent supposera que le Videogame modèle stocke les enregistrements dans la table videogames. 
+     * Vous pouvez spécifier une table personnalisée en définissant une table propriété sur votre modèle:
+     * 
      * @var array
      */
     protected $fillable = [

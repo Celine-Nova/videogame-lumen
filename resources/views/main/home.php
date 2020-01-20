@@ -1,11 +1,14 @@
 <!-- j'inclus le layout header -->
-<!-- DIR permet de récupérer le dossier du fichier courant mais ici il est optionnel -->
-<?php include __DIR__ . '/layout/header.php'; ?>
+<!--ici le . est égal au slash / (layout/footer) -->
+
+<!-- #Raccourci de php echo 
+en remplaçant le php echo par un egal (?=)-->
+
+<?= view( 'layout.header' ) ?>
 <!-- Autre possibilité je peux utiliser la fonction view que je l'utiliserai sur la page admin -->
-<nav>
-    Allez ajouter un jeu à l'aide du <a href="<?= route("route_admin") ?>"> formulaire </a>
- 
-</nav>
+    <div>
+            <a href = " <?= route('route_admin') ?> " class=" btn btn-danger" > Administrateur </a>
+    </div>
 
 <h1></h1>
 <div class="row">
@@ -49,5 +52,5 @@
         </table>
     </div>
     <!-- j'inclus le template header -->             
-    <?php include __DIR__ . '/layout/footer.php'; ?>
+    <?= view( 'layout.footer' ) ?>
     
