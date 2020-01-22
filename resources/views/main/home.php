@@ -33,10 +33,9 @@ en remplaçant le php echo par un egal (?=)-->
             </thead>
             <tbody>
                 <!--Je boucle sur le tableau $videogameList contenant tous les jeux vidéos -->
-                <?php foreach ($videogameList as $game)
+                <?php foreach ($videogameList as $game):
                 {
-                    
-                    ?>
+                   ?>
                 <tr>
                     <td><?= $game->id;?></td>
                     <td><?= $game->name;?></td>
@@ -44,14 +43,17 @@ en remplaçant le php echo par un egal (?=)-->
                     <td><?= $game->release_date;?></td>
                     <td>
                     <?php 
-                    $platform = $platformList->firstWhere('id', $game->platform_id);
-                    echo $platform->name;
+                    // Je cherche l'objet 'platform' qui pour id la clef étrangèere 'platform_id' dans game
+                    //La firstWhere méthode renvoie le premier élément de la collection avec la paire clé / valeur donnée: https://laravel.com/docs/5.8/collections#method-first-where
+                        $platform = $platformList->firstWhere('id', $game->platform_id);
+                        echo $platform->name;
                     ?>
                     </td>
                 </tr>
                 <?php
                 }
                 ?>
+                <?php endforeach ; ?>
         
             </tbody>
         </table>

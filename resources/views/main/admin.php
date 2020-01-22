@@ -22,10 +22,12 @@
 				<div class="form-group">
 					<label for="platform">Console / Support</label>
 					<select class="custom-select" id="platform" name="platform">
-						<option>3</option>
-						
-						<option value=""></option>
-						
+						<!-- boucle php autre syntaxe que sur la page home sans les {} -->
+						<?php foreach($platformList as $platform) : ?>	
+							<!-- J'insere la 'plateform_id' dans la value afin de pouvoir le reuperer dans le MainController -->
+							<option value="<?= $platform->id ?>"><?= $platform->name ?> </option>
+							
+							<?php endforeach; ?>
 					</select>
 				</div>
 				<button type="submit" class="btn btn-success btn-block">Ajouter</button>
@@ -36,5 +38,6 @@
 </div>
 <p> Retour à <a href="<?= route('route_home') ?>"> l'accueil </a>
 </main>
+
 <!-- j'inclus le template footer -->
 <?php echo view('layout.footer');?>
