@@ -42,7 +42,12 @@ en remplaçant le php echo par un egal (?=)-->
                     <td><?= $game->name;?></td>
                     <td><?= $game->editor;?></td>
                     <td><?= $game->release_date;?></td>
-                    <td><?= $game->platform_id;?></td>
+                    <td>
+                    <?php 
+                    $platform = $platformList->firstWhere('id', $game->platform_id);
+                    echo $platform->name;
+                    ?>
+                    </td>
                 </tr>
                 <?php
                 }

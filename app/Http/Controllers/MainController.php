@@ -22,6 +22,8 @@ class MainController extends Controller
     }
     public function home() {
         $videogameList = DB::table('videogame')->get();
+        $platformList = DB::table('platform')->get();
+        dump($platformList);
         
         // dump($videogameList);
         
@@ -30,6 +32,7 @@ class MainController extends Controller
             [
                 // 'test' => 'coucou',
                 'videogameList' => $videogameList,
+                'platformList' => $platformList,
             ]
         );
     }
