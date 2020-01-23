@@ -38,3 +38,26 @@ $router->post('/admin', [
    'uses' => 'MainController@admin',
    'as' => 'route_request'
 ]);
+//inscription
+$router->get('/signup', [
+   'uses' => 'UserController@signup',
+   'as' => 'route_signup'
+]);
+$router->post('/signup', [
+   'uses' => 'UserController@signup',
+   'as' => 'route_signup'
+]);
+// connection authentification
+$router->get('/signin', [
+   'uses' => 'UserController@signin',
+   'as' => 'route_signin'
+]);
+// $router->post('/signin', [
+//    'uses' => 'UserController@signin',
+//    'as' => 'route_signin'
+// ]);
+//deconnection
+$router->get('/logout', [
+   'uses' => 'UserController@logout',
+   'as' => 'route_logout'
+]);

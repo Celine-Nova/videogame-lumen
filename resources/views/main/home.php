@@ -17,7 +17,7 @@ en remplaçant le php echo par un egal (?=)-->
         <a href="index.php?order=editor" class="btn btn-info">Trier par éditeur</a>&nbsp;
         <!-- N'afficher ce bouton que s'il y a un tri -->
                 
-        <a href="index.php" class="btn btn-dark">Annuler le tri</a><br>
+        <a href="<?= route('route_home') ?>" class="btn btn-dark">Annuler le tri</a><br>
         
       
         <br>

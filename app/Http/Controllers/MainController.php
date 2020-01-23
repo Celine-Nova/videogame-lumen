@@ -22,12 +22,24 @@ class MainController extends Controller
     {
         //
     }
-    public function home() {
-        //Je récupère la liste des videogmae et des platform : cf https://laravel.com/docs/5.8/queries
-        $videogameList = DB::table('videogame')->get();
-        $platformList = DB::table('platform')->get();
-        //dump($platformList);
-        //dump($videogameList);
+    public function home(Request $request) {
+        //Pour effectuer mon filtre sur mes données , je recupere la valeur du parametre passé en GET dans mon url qui se nomme "order"
+        $orderType = $request->input('order', null); //je prevois une valeur nulle par defaut si pas de tri
+
+        //Je récupère la liste des platform : cf https://laravel.com/docs/5.8/queries
+            $platformList = DB::table('platform')->get();
+            //dump($platformList);
+
+            //Si 'orderType' est nul alors je recupère ma liste de videogame
+            if(is_null($orderType)){
+                
+                $videogameList = DB::table('videogame')->get();
+                //dump($videogameList);
+            } else {
+                // sinon je tri les champs donnés en paramètre de l'Url
+                $videogameList = Videogame::orderBy($orderType, 'asc')->get();
+
+            }
         
         return view(
             'main.home',
@@ -56,12 +68,15 @@ class MainController extends Controller
             $videogame->editor = $editor;
             $videogame->release_date = $releaseDate;
             // Gràce mon 'option value' dans mon formulaire je peux reucpérer mon 'plaform_id'
+            // Autre possibilité gérer les clés étrangère via Eloquent et les relations dans les modeles
             $videogame->platform_id = $platformId;
 
             //Modele Videogame herite de model
             //Je peux utiliser la methode heritée save() pour sauvegarder les données en BD
-
             $videogame->save();
+            
+            //après l'envoi du formulaire je redirige vers la route home
+            return redirect()->route('route_home');
         }
         
         return view(

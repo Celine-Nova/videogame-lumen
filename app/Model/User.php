@@ -15,11 +15,16 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     /**
      * The attributes that are mass assignable.
      *
-     * Par convention, le nom pluriel de la classe sera utilisé comme nom de table sauf si un autre nom est explicitement spécifié.
-     *  Ainsi, dans ce cas, Eloquent supposera que le Videogame modèle stocke les enregistrements dans la table videogames. 
-     * Vous pouvez spécifier une table personnalisée en définissant une table propriété sur votre modèle:
-     * 
-     * @var array
+     *  @var string
+     */
+    // je force le nom de la table en app_users afin d'eviter une ressemblance trop proche / ou de telescoper Mysql avec un nom reservé
+    protected $table = 'app_user';
+
+    // je désactive les colonnes attendues par defaut created_at, updated_at
+    public  $timestamps = false ;
+
+     /**
+     *  @var array
      */
     protected $fillable = [
         'name', 'email',
