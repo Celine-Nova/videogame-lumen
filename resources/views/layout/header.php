@@ -13,16 +13,15 @@
   </head>
   <body>
   <main class="container">
-    <ul class="nav">
-    
-              <li class="nav-item">
-                <a class="nav-link" href="<?= route('route_home') ?>">Accueil</a>
-              </li>
-              <li>
-                <a href="<?= route('route_signup') ?>" class="btn btn-primary">Inscription</a>&nbsp;
-              </li>
-    </ul>
+   <!-- test navbar bouton séparé  -->
+   
+    <div class="d-flex bd-highlight mb-3">
+      <div class="mr-auto p-2 bd-highlight"><a class="btn btn-link" href="<?= route('route_home') ?>">Accueil</a></div>
+      <div class="p-2 bd-highlight"><a class="btn btn-primary" href="<?= route('route_signup') ?>">Inscription</a></div>
+      <div class="p-2 bd-highlight"><a class="btn btn-info" href="<?= route('route_signin') ?>">Connexion</a></div>
+    </div>
+
   <div class="jumbotron">
     <h1 class="display-4">Mes jeux vidéos</h1>
-    <p class="lead">Voici une petite interface toute simple (grâce à bootstrap) permettant de visualiser les jeux vidéos de ma base de données, mais aussi de les ajouter !</p>
+    <p class="lead">Voici une petite interface toute simple (grâce à bootstrap) permettant de visualiser les jeux vidéos de ma base de données, mais aussi de les ajouter  !</p>
 </div>

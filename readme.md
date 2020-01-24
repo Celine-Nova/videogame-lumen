@@ -1,4 +1,6 @@
 # VIDEOGAME
+(:warning: Porject en cours de construction :construction:)
+
 ## Projet avec Lumen
 Mon organisme de formation O'clock m'a fourni le code HTML BOOTSTRAP me permettant de gérer mes jeux vidéo. Elle est sympa. Merci  :wink:
 Elle m'a confiée la partie dynamique
@@ -13,5 +15,9 @@ Objectifs :
     - Créer l'architecture MVC (Modèle Vue Controleur) :heavy_check_mark:
 - Affichez les jeux video :heavy_check_mark:
 - Listez les plateformes (consoles de jeu) en dynamique :heavy_check_mark:
-- Avoir cohérence entre les 2 tables pour récupérer le nom des plateformes en rapport à leur ID :heavy_check_mark:
-- Triez cette liste
+- Avoir cohérence entre les 2 tables pour récupérer le nom des plateformes en rapport à leur ID 
+- Triez cette liste :heavy_check_mark:
+**Sécurité**
+- Inscription :heavy_check_mark:
+- Authentification
+- Deconnection

@@ -10,12 +10,12 @@
 <?php endforeach; ?>
 
 
-<form action="" method="POST">
+<form action="" method="POST" novalidate="novalidate"> <!-- novalidate desactive la validation automatique du navigateur-->
 
   <div class="form-group">
     <label for="email">Adresse email</label>
     <!-- ATTENTION : ne pas oublier de rajouter l'attribut name sur chaque input -->
-    <input type="text" class="form-control" id="email" name="email" value="" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="text" class="form-control" id="email" name="email" value="<?= $email?>" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
 
   <div class="form-group">

@@ -52,10 +52,10 @@ $router->get('/signin', [
    'uses' => 'UserController@signin',
    'as' => 'route_signin'
 ]);
-// $router->post('/signin', [
-//    'uses' => 'UserController@signin',
-//    'as' => 'route_signin'
-// ]);
+$router->post('/signin', [
+   'uses' => 'UserController@signin',
+   'as' => 'route_signin'
+]);
 //deconnection
 $router->get('/logout', [
    'uses' => 'UserController@logout',
