@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,6 +16,7 @@ class UserController extends Controller
     public function __construct()
     {
        // parent::__construct();
+       dump($_SESSION);
     }
     //Inscription
     public function signup(Request $request){
@@ -82,33 +84,53 @@ class UserController extends Controller
             'email' => $email
     ]);
  }
-     public function signin(){
-    //     //J'initialise mon tableau des erreurs
-    //     $erroList = [];
-    //     //je récupère les données du formulaire signup
-    //     $email = $request->input('email');
-    //     $password = $request->input('passwword');
-    //     $confirmPassword = $request->input('confirm-password');
+     public function signin(Request $request){
+        //J'initialise mon tableau des erreurs
+        $errorList = [];
+        //je récupère les données du formulaire signup
+        $email = $request->input('email');
+        $password = $request->input('password');
+       
         
-    //     //je verifie les données
-    //     if($request->isMethod('post')){
-    //         // 'trim()' Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
-    //         $email = trim($email);
-    //         $password = trim($password);
+        //je verifie les données
+        if($request->isMethod('post')){
+            // 'trim()' Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
+            $email = trim($email);
+            $password = trim($password);
 
-    //         //VALIDATION DES DONNEES
-    //         if(
-    //             empty($email) || 
-    //             filter_var($email, FILTER_VALIDATE_EMAIL) === false || //Filtre : Valide une adresse de courriel
-    //             empty($password)
-    //         ){
-    //             $errorList[] = 'Identifiant ou mot de passe incorrect';
-    //         }
-    //     }
-        return view(
-            'user.signin',
+            //VALIDATION DES DONNEES
+            if(
+                empty($email) || 
+                filter_var($email, FILTER_VALIDATE_EMAIL) === false || //Filtre : Valide une adresse de courriel
+                empty($password)
+            ){
+                $errorList[] = 'Identifiant ou mot de passe vide';
+            }
+
+            //Grâce à l'email je verifie si mon utilisateur existe déja dans ma BDD
+            $user = User::where('email', '=', $email)->first(); //Si oui alors je peux m'authentifier
+
+            //Si mon user existe alors je le récupèere
+            
+           
+            if($user){
+                //Je compare les mots de passe : celui hashé en CDD et celui du formulaire de connexion qui va être hashé grâce à "password_verify"
+                if(password_verify($password, $user->password)){
+                   // Je créée un tableau de SESSION et pour activer la SESSION il faut un "session_start" au plus tôt dans l'application ATTENTION il doit être fait après l'autoload sinon ERREUR
+                   // Donc "session_start" dans le fichier boostrap/app.php
+                //    $_SESSION['currentUser'] = $user;
+                   
+                    return redirect()->route('route_home');
+                }
+                } else {
+                    $errorList[] = 'Identifiant ou mot de passe incorrect';
+                }
+
+        }
+        return view('user.signin',
              [
-                 
+                'errorList' => $errorList,
+                'email' => $email
              ]
              );
      }

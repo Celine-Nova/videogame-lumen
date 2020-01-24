@@ -19,5 +19,5 @@ Objectifs :
 - Triez cette liste :heavy_check_mark:  
 **Sécurité**
 - Inscription :heavy_check_mark:
-- Authentification
+- Authentification :heavy_check_mark:
 - Deconnection
