@@ -38,7 +38,7 @@ $router->post('/admin', [
    'uses' => 'MainController@admin',
    'as' => 'route_request'
 ]);
-//inscription
+//Inscription
 $router->get('/signup', [
    'uses' => 'UserController@signup',
    'as' => 'route_signup'
@@ -47,7 +47,7 @@ $router->post('/signup', [
    'uses' => 'UserController@signup',
    'as' => 'route_signup'
 ]);
-// connection authentification
+// Connection authentification
 $router->get('/signin', [
    'uses' => 'UserController@signin',
    'as' => 'route_signin'
@@ -56,7 +56,7 @@ $router->post('/signin', [
    'uses' => 'UserController@signin',
    'as' => 'route_signin'
 ]);
-//deconnection
+//Deconnexion
 $router->get('/logout', [
    'uses' => 'UserController@logout',
    'as' => 'route_logout'

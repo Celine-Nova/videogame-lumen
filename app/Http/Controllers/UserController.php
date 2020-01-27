@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\User;
+use App\Utils\UserSession;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,8 @@ class UserController extends Controller
      */
     public function __construct()
     {
-       // parent::__construct();
-       dump($_SESSION);
+        parent::__construct();
+       
     }
     //Inscription
     public function signup(Request $request){
@@ -116,9 +117,9 @@ class UserController extends Controller
             if($user){
                 //Je compare les mots de passe : celui hashé en CDD et celui du formulaire de connexion qui va être hashé grâce à "password_verify"
                 if(password_verify($password, $user->password)){
-                   // Je créée un tableau de SESSION et pour activer la SESSION il faut un "session_start" au plus tôt dans l'application ATTENTION il doit être fait après l'autoload sinon ERREUR
-                   // Donc "session_start" dans le fichier boostrap/app.php
-                //    $_SESSION['currentUser'] = $user;
+                    // Je créée un tableau de SESSION et pour activer la SESSION il faut un "session_start" au plus tôt dans l'application ATTENTION il doit être fait après l'autoload sinon ERREUR
+                    // Donc "session_start" dans le fichier boostrap/app.php
+                    UserSession::connect($user);
                    
                     return redirect()->route('route_home');
                 }
@@ -133,6 +134,13 @@ class UserController extends Controller
                 'email' => $email
              ]
              );
+     }
+
+    //Deconnexion
+     public function logout(){
+        UserSession::disconnect();
+
+           return redirect()->route('route_home');
      }
     
 }

@@ -20,7 +20,10 @@ class MainController extends Controller
      */
     public function __construct()
     {
-        //
+        // j'appelle la fonction "__construct parent" pour beneficier du comportement  du constructeur de "Controller.php"
+        //je peux aussi y ajouter celui de mon enfant
+       parent::__construct();
+        
     }
     public function home(Request $request) {
         //Pour effectuer mon filtre sur mes données , je recupere la valeur du parametre passé en GET dans mon url qui se nomme "order"

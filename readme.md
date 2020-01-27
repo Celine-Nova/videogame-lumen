@@ -20,4 +20,6 @@ Objectifs :
 **Sécurité**
 - Inscription :heavy_check_mark:
 - Authentification :heavy_check_mark:
-- Deconnection
+- La SESSION :heavy_check_mark:
+- Deconnexion :heavy_check_mark:
+- Créer et gerer les rôles (user et admin)
