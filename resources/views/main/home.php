@@ -7,7 +7,10 @@ en remplaçant le php echo par un egal (?=)-->
 <?= view( 'layout.header' ) ?>
 <!-- Autre possibilité je peux utiliser la fonction view que je l'utiliserai sur la page admin -->
     <div>
+        <!-- Autre syntaxe pour condition PHP dans code HTML -->
+        <?php if($isAdmin) : ?>
             <a href = " <?= route('route_admin') ?> " class=" btn btn-danger" > Administrateur </a>
+        <?php endif; ?>
     </div>
 
 <h1></h1>

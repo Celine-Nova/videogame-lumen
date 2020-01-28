@@ -10,6 +10,7 @@ use App\Model\Videogame;
 use Illuminate\Http\Request;
 // J'importe la classe pour effectuer les requetes dans la DB
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\MessageBag;
 
 class MainController extends Controller
 {
@@ -26,6 +27,7 @@ class MainController extends Controller
         
     }
     public function home(Request $request) {
+       
         //Pour effectuer mon filtre sur mes données , je recupere la valeur du parametre passé en GET dans mon url qui se nomme "order"
         $orderType = $request->input('order', null); //je prevois une valeur nulle par defaut si pas de tri
 
@@ -54,6 +56,10 @@ class MainController extends Controller
         );
     }
     public function admin(Request $request) {
+
+         //J'appelle la methode de mon parent controleur.php qui gère les autorisation pour la page admin
+         $this->userAllowed();
+
         //je recupere la liste des platform avec ORM eloquent cf : https://laravel.com/docs/5.8/eloquent
         $platformList = Platform::all();
         // dump($platformList);
@@ -77,7 +83,8 @@ class MainController extends Controller
             //Modele Videogame herite de model
             //Je peux utiliser la methode heritée save() pour sauvegarder les données en BD
             $videogame->save();
-            
+
+           
             //après l'envoi du formulaire je redirige vers la route home
             return redirect()->route('route_home');
         }
@@ -86,6 +93,8 @@ class MainController extends Controller
             'main.admin',
             [
                 'platformList' => $platformList,
+             
+                
             ]
         );
     }

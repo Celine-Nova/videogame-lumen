@@ -137,10 +137,11 @@ class UserController extends Controller
      }
 
     //Deconnexion
-     public function logout(){
+    public function logout(){
+
         UserSession::disconnect();
 
-           return redirect()->route('route_home');
+        return redirect()->route('route_home');
      }
     
 }

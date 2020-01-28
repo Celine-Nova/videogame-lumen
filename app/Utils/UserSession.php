@@ -9,6 +9,12 @@ abstract class UserSession {
     //ici la clé de mon tableau SESSION où est stocké le user
     const SESSION_USER_NAME = 'currentUser';
     
+    //je defini les roles
+    const ROLE_ADMIN = 1;
+    const ROLE_USER =2;
+
+
+
     //Je connecte mon utilisateur
     // Avec le type int  'User' je force mon objet à recevoir du type 'User'
     public static function connect(User $user){
@@ -42,11 +48,14 @@ abstract class UserSession {
 
     //Je recuère l'Id du rôle de mon utilsateur
     public static function getROleId(){
-
+        if(self::isConnected()){
+            return self::getUser()->role_id;
+        }
+        return null;
     }
 
     //Je vérifie si mon utilsateur est un Administrateur ou non 
     public static function isAdmin(){
-
+        return self::getROleId() == self::ROLE_ADMIN;
     }
 }

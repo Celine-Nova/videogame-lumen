@@ -23,4 +23,18 @@ class Controller extends BaseController
         View::share('currentUser', UserSession::getUser());
         View::share('isAdmin', UserSession::isAdmin());
     }
+
+    //Gérer les droits d'accès à une page ici('Admin') formulaire d'ajout de jeu
+    public function userAllowed(){
+        //L'utilsateur est-il connecté?
+        //si pas connecté erreur 401
+        if(!UserSession::isConnected()){
+            abort(401,'Vous devez vous connecter');
+        }
+
+        //L'utilisateur connecté est-il un Admin, erreur 403 => droit
+        if (!UserSession::isAdmin()){
+            abort(403, 'Vous n\'avez pas les droits pour acceder à cette page');
+        }
+    }
 }

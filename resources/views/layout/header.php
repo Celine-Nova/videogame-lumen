@@ -14,10 +14,11 @@
   <body>
   <main class="container">
    <!-- test navbar bouton séparé  -->
+  
    
       <div class="d-flex bd-highlight mb-3">
           <div class="mr-auto p-2 bd-highlight"><a class="btn btn-link" href="<?= route('route_home') ?>">Accueil</a></div>
-          <!-- Grâce aux façades que j'ai parametré dans le construct de mon Controller.php parent j'ai partager les données de mes Controller enfants dont je souhaite avoir accès dans mes vues 
+          <!-- Grâce aux façades que j'ai parametré dans le construct de mon Controller.php parent j'ai partagé les données de mes Controller enfants dont je souhaite avoir accès dans mes vues 
           AVANT j'utilisais  'if (isset($_SESSION['currentUser']'
           MAINTENANT je peux utiliser la methode  'isConnected de ma classe UserSession" cf "View::share" -->
           <?php if($isConnected)
