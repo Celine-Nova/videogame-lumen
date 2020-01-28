@@ -27,9 +27,6 @@ Objectifs :
 - Créer et gerer les rôles (user et admin):heavy_check_mark:
 - Gérer les accès sur la page admin :heavy_check_mark:
 
-![Page accueil](images/accueil_game.jpg)  
+![Page accueil](public/images/accueil_game.jpg)  
 ![Page admin](public/images/admin.jpg)
-![Page admin](/public/images/admin.jpg)
-![Page admin](/app/public/images/admin.jpg)
-![Page admin](admin.jpg)
-![Page]picture/capture.JPG)
+![Page accueil admin](/public/images/accueil_admin.jpg)
