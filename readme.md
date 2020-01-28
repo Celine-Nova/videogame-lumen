@@ -25,8 +25,13 @@ Objectifs :
 - La SESSION :heavy_check_mark:
 - Deconnexion :heavy_check_mark:
 - Créer et gerer les rôles (user et admin):heavy_check_mark:
-- Gérer les accès sur la page admin :heavy_check_mark:
+- Gérer les accès sur la page admin :heavy_check_mark:  
 
+#### Vue page Accueil  
 ![Page accueil](public/images/accueil_game.jpg)  
+
+#### Vue page Admin ajout d'un jeu  
 ![Page admin](public/images/admin.jpg)
+
+#### Vue page Accuei administrateur  
 ![Page accueil admin](/public/images/accueil_admin.jpg)
