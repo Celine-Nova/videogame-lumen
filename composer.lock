@@ -88,6 +88,9 @@
                 "shasum": ""
             },
             "require": {
+              "illuminate/database": "6.20.26"
+            }
+            "require": {
                 "php": "^7.0"
             },
             "require-dev": {
